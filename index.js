@@ -47,8 +47,8 @@ function handleEvent(event) {
 						type: 'location',
 						title: '港南艾茉爾婚宴會館',
 						address: "新竹市香山區海埔路588號",
-						latitude: 24.8225965,
-						longitude: 120.9084893
+						latitude: 24.822635434550303, 
+						longitude: 120.9106672689193
 					  }
 			]);
   }
