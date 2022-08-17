@@ -35,11 +35,21 @@ function handleEvent(event) {
     return Promise.resolve(null);
   }
 
+	
   // create a echoing text message
   const echo = { type: 'text', text: event.message.text };
 
   // use reply API
-  return client.replyMessage(event.replyToken, echo);
+  //return client.replyMessage(event.replyToken, echo);
+  return client.replyMessage(event.replyToken, [
+			  {
+				type: 'location',
+				title: '昕力資訊',
+				address: "台北市內湖區瑞光路435號4樓",
+				latitude: 25.0813,
+				longitude: 121.5721096
+			  }
+	]);
 }
 
 // listen on port
