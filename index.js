@@ -41,15 +41,17 @@ function handleEvent(event) {
 
   // use reply API
   //return client.replyMessage(event.replyToken, echo);
-  return client.replyMessage(event.replyToken, [
-			  {
-				type: 'location',
-				title: '昕力資訊',
-				address: "台北市內湖區瑞光路435號4樓",
-				latitude: 25.0813,
-				longitude: 121.5721096
-			  }
-	]);
+  if (event.message.text == '我很笨忘了地點') {
+		  return client.replyMessage(event.replyToken, [
+					  {
+						type: 'location',
+						title: '港南艾茉爾婚宴會館',
+						address: "新竹市香山區海埔路588號",
+						latitude: 24.8225965,
+						longitude: 120.9084893
+					  }
+			]);
+  }
 }
 
 // listen on port
