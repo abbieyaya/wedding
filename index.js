@@ -98,16 +98,7 @@ function handleEvent(event) {
 					  }
 			]);
   }
-  
-  if (event.message.text === '測試1') {
-        return client.replyMessage(event.replyToken, [
-            {
-                type: 'sticker',
-                packageId: '1',
-                stickerId: '1'
-            }
-        ]);
-    }
+    */
 	if (event.message.text === '測試2') {
         return client.replyMessage(event.replyToken, [
             {
@@ -221,7 +212,7 @@ function handleEvent(event) {
             }
         ]);
     }
-  */
+
 
 	// use reply API
 	return client.replyMessage(event.replyToken, echo);
