@@ -51,54 +51,35 @@ function handleEvent(event) {
 			]);
   }
   
-  if (event.message.text == '測試1') {
-        return client.replyMessage(event.replyToken, [
-            {
-                type: 'sticker',
-                packageId: '1',
-                stickerId: '1'
-            }
-        ]);
-  }
+	if (event.message.text === '測試') {
+		return client.replyMessage(event.replyToken, [
+			{
+				type: 'template',
+				altText: 'Buttons alt text',
+				template: {
+					type: 'buttons',
+					thumbnailImageUrl: 'https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/buttons/1040.jpg',
+					title: 'My button sample',
+					text: 'Hello, my button',
+					actions: [
+						{ label: '言 hello2', type: 'postback', data: '測試1', text: '測試1' },
+						{ label: 'Say message', type: 'message', text: '測試1' },
+					],
+				},
+			}
+		]);
+	}
+
+	if (event.message.text == '測試1') {
+		return client.replyMessage(event.replyToken, [
+			{
+				type: 'sticker',
+				packageId: '1',
+				stickerId: '1'
+			}
+		]);
+	 }
   
-  /*
-  if (event.message.text == '婚紗') {
-		  return client.replyMessage(event.replyToken, [
-					  {
-						type: 'template',
-						template: {
-							type: "image_carousel",
-							columns: [
-							  {
-								imageUrl: "https://example.com/bot/images/item1.jpg",
-								action: {
-								  type: "postback",
-								  label: "Buy",
-								  data: "action=buy&itemid=111"
-								}
-							  },
-							  {
-								imageUrl: "https://example.com/bot/images/item2.jpg",
-								action: {
-								  type: "message",
-								  label: "Yes",
-								  text: "yes"
-								}
-							  },
-							  {
-								imageUrl: "https://example.com/bot/images/item3.jpg",
-								action: {
-								  type: "uri",
-								  label: "View detail",
-								  uri: "http://example.com/page/222"
-								}
-							  }
-							]
-						  }
-					  }
-			]);
-  }
-    */
 	if (event.message.text === '測試2') {
         return client.replyMessage(event.replyToken, [
             {
