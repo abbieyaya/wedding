@@ -201,7 +201,7 @@ function handleEvent(event) {
 					title: '朵瑞斯',
 					text: '來自熱情洋溢的海島',
 					actions: [
-					  { label: '投我一票', type: 'postback', displayText: '投朵瑞斯一票', data: 'action=vote&candidate=doris&vote=1' },
+					  { label: '投我一票', type: 'postback', displayText: '投朵瑞斯一票', text: '朵瑞斯 good' },
 					  { label: '查看更多', type: 'uri', uri: 'https://line.me' },
 					],
 				  },
@@ -210,7 +210,7 @@ function handleEvent(event) {
 					title: '凱恩',
 					text: '就是愛音樂！',
 					actions: [
-					  { label: '投我一票', type: 'postback', displayText: '投凱恩一票', data: 'action=vote&candidate=ken&vote=1' },
+					  { label: '投我一票', type: 'postback', displayText: '投凱恩一票', text: '朵瑞斯 good' },
 					  { label: '查看更多', type: 'uri', uri: 'https://line.me' },
 					],
 				  },
@@ -219,7 +219,7 @@ function handleEvent(event) {
 					title: '艾瑞克',
 					text: '彩繪人生~',
 					actions: [
-					  { label: '投我一票', type: 'postback', displayText: '投艾瑞克一票', data: 'action=vote&candidate=eric&vote=1' },
+					  { label: '投我一票', type: 'postback', displayText: '投艾瑞克一票', text: '朵瑞斯 good' },
 					  { label: '查看更多', type: 'uri', uri: 'https://line.me' },
 					],
 				  },
@@ -228,7 +228,7 @@ function handleEvent(event) {
 					title: '富爸',
 					text: '來發禮物囉!',
 					actions: [
-					  { label: '投我一票', type: 'postback', displayText: '投富爸一票', data: 'action=vote&candidate=richfather&vote=1' },
+					  { label: '投我一票', type: 'postback', displayText: '投富爸一票', text: '朵瑞斯 good' },
 					  { label: '查看更多', type: 'uri', uri: 'https://line.me' },
 					],
 				  },
