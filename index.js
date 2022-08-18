@@ -28,6 +28,14 @@ app.post('/callback', line.middleware(config), (req, res) => {
     });
 });
 
+let fake_candidates =
+  [
+    { id: 1, name: 'doris', vote: 0 },
+    { id: 2, name: 'ken', vote: 0 },
+    { id: 3, name: 'eric', vote: 0 },
+    { id: 4, name: 'richfather', vote: 0 },
+  ]
+
 // event handler
 function handleEvent(event) {
   if (event.type !== 'message' || event.message.type !== 'text') {
@@ -191,37 +199,49 @@ function handleEvent(event) {
         return client.replyMessage(event.replyToken, [
             {
                 type: 'template',
-                altText: 'this is a carousel template',
-                template: {
-                    type: 'carousel',
-					columns: [
-					{
-						thumbnailImageUrl: 'https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/buttons/1040.jpg',
-						title: 'My button sample1',
-						text: 'Hello, my button1',
-						actions: [
-							{ label: 'Go to line.me', type: 'uri', uri: 'https://line.me' },
-							{ label: 'Say hello1', type: 'postback', data: 'hello こんにちは' },
-							{ label: '言 hello2', type: 'postback', data: 'hello こんにちは', text: 'hello こんにちは' },
-							{ label: 'Say message', type: 'message', text: 'Rice=米' },
-						],
-					},
-					{
-						thumbnailImageUrl: 'https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/buttons/1040.jpg',
-						title: 'My button sample2',
-						text: 'Hello, my button2',
-						actions: [
-							{ label: 'Go to line.me', type: 'uri', uri: 'https://line.me' },
-							{ label: 'Say hello1', type: 'postback', data: 'hello こんにちは' },
-							{ label: '言 hello2', type: 'postback', data: 'hello こんにちは', text: 'hello こんにちは' },
-							{ label: 'Say message', type: 'message', text: 'Rice=米' },
-						],
-					}
+                altText: '最佳主持人票選',
+			    template: {
+				type: 'carousel',
+				imageAspectRatio: 'square',
+				columns: [
+				  {
+					thumbnailImageUrl: 'https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/buttons/1040.jpg',
+					title: '朵瑞斯',
+					text: '來自熱情洋溢的海島',
+					actions: [
+					  { label: '投我一票', type: 'postback', displayText: '投朵瑞斯一票', data: 'action=vote&candidate=doris&vote=1' },
+					  { label: '查看更多', type: 'uri', uri: 'https://line.me' },
+					],
+				  },
+				  {
+					thumbnailImageUrl: 'https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/imagemap/preview.jpg',
+					title: '凱恩',
+					text: '就是愛音樂！',
+					actions: [
+					  { label: '投我一票', type: 'postback', displayText: '投凱恩一票', data: 'action=vote&candidate=ken&vote=1' },
+					  { label: '查看更多', type: 'uri', uri: 'https://line.me' },
+					],
+				  },
+				  {
+					thumbnailImageUrl: 'https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/buttons/1040.jpg,
+					title: '艾瑞克',
+					text: '彩繪人生~',
+					actions: [
+					  { label: '投我一票', type: 'postback', displayText: '投艾瑞克一票', data: 'action=vote&candidate=eric&vote=1' },
+					  { label: '查看更多', type: 'uri', uri: 'https://line.me' },
+					],
+				  },
+				  {
+					thumbnailImageUrl: 'https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/imagemap/preview.jpg,
+					title: '富爸',
+					text: '來發禮物囉!',
+					actions: [
+					  { label: '投我一票', type: 'postback', displayText: '投富爸一票', data: 'action=vote&candidate=richfather&vote=1' },
+					  { label: '查看更多', type: 'uri', uri: 'https://line.me' },
+					],
+				  },
 				],
-				imageAspectRatio: "rectangle",
-				imageSize: "cover"
-				
-				}
+			  },
             }
         ]);
     }
