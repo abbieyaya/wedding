@@ -59,11 +59,19 @@ function handleEvent(event) {
 				template: {
 					type: 'buttons',
 					thumbnailImageUrl: 'https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/buttons/1040.jpg',
-					title: 'My button sample',
-					text: 'Hello, my button',
+					title: '測試功能',
+					text: '請點選想測試的:',
 					actions: [
-						{ label: '言 hello2', type: 'postback', data: '測試1', text: '測試1' },
-						{ label: 'Say message', type: 'message', text: '測試1' },
+						{ label: '測試1', type: 'postback', data: '測試1', text: '測試1' },
+						{ label: '測試2', type: 'postback', data: '測試2', text: '測試2' },
+						{ label: '測試3', type: 'postback', data: '測試3', text: '測試3' },
+						{ label: '測試4', type: 'postback', data: '測試4', text: '測試4' },
+						{ label: '測試5', type: 'postback', data: '測試5', text: '測試5' },
+						{ label: '測試6', type: 'postback', data: '測試6', text: '測試6' },
+						{ label: '測試7', type: 'postback', data: '測試7', text: '測試7' },
+						{ label: '測試8', type: 'postback', data: '測試8', text: '測試8' },
+						{ label: '測試9', type: 'postback', data: '測試9', text: '測試9' },
+						{ label: '測試10', type: 'postback', data: '測試10', text: '測試10' },
 					],
 				},
 			}
