@@ -99,44 +99,6 @@ function handleEvent(event) {
             }
         ]);
     }
-	if (event.message.text === '測試2') {
-        return client.replyMessage(event.replyToken, [
-            {
-                type: 'image',
-                originalContentUrl: 'https://developers.line.biz/media/messaging-api/messages/image-full-04fbba55.png',
-                previewImageUrl: 'https://developers.line.biz/media/messaging-api/messages/image-167efb33.png'
-            }
-        ]);
-    }
-	if (event.message.text === '測試3') {
-        return client.replyMessage(event.replyToken, [
-            {
-                type: 'video',
-                originalContentUrl: 'https://www.sample-videos.com/video123/mp4/240/big_buck_bunny_240p_1mb.mp4',
-                previewImageUrl: 'https://www.sample-videos.com/img/Sample-jpg-image-50kb.jpg'
-            }
-        ]);
-    }
-	if (event.message.text === '測試4') {
-        return client.replyMessage(event.replyToken, [
-            {
-                type: 'audio',
-                originalContentUrl: 'https://www.sample-videos.com/audio/mp3/crowd-cheering.mp3',
-                duration: '27000'
-            }
-        ]);
-    }
-	if (event.message.text === '測試5') {
-        return client.replyMessage(event.replyToken, [
-            {
-                type: 'location',
-                title: 'my location',
-                address: "〒150-0002 東京都渋谷区渋谷２丁目２１−１",
-                latitude: 35.65910807942215,
-                longitude: 139.70372892916203
-            }
-        ]);
-    }
 	// create a echoing text message
 	const echo = { type: 'text', text: event.message.text };
 
