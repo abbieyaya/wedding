@@ -194,7 +194,7 @@ function handleEvent(event) {
                 altText: 'this is a carousel template',
                 template: {
                     type: 'carousel',
-					"columns": [
+					columns: [
 					{
 						thumbnailImageUrl: 'https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/buttons/1040.jpg',
 						title: 'My button sample',
@@ -217,7 +217,11 @@ function handleEvent(event) {
 							{ label: 'Say message', type: 'message', text: 'Rice=米' },
 						],
 					}
-				]}
+				],
+				//imageAspectRatio: "rectangle",
+				//imageSize: "cover"
+				
+				}
             }
         ]);
     }
