@@ -214,24 +214,6 @@ function handleEvent(event) {
 					  { label: '查看更多', type: 'uri', uri: 'https://line.me' },
 					],
 				  },
-				  {
-					thumbnailImageUrl: 'https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/buttons/1040.jpg,
-					title: '艾瑞克',
-					text: '彩繪人生~',
-					actions: [
-					  { label: '投我一票', type: 'postback', displayText: '投艾瑞克一票', text: '朵瑞斯 good' },
-					  { label: '查看更多', type: 'uri', uri: 'https://line.me' },
-					],
-				  },
-				  {
-					thumbnailImageUrl: 'https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/imagemap/preview.jpg,
-					title: '富爸',
-					text: '來發禮物囉!',
-					actions: [
-					  { label: '投我一票', type: 'postback', displayText: '投富爸一票', text: '朵瑞斯 good' },
-					  { label: '查看更多', type: 'uri', uri: 'https://line.me' },
-					],
-				  },
 				],
 			  },
             }
