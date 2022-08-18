@@ -51,7 +51,7 @@ function handleEvent(event) {
 			]);
   }
   
-	if (event.message.text === '測試') {
+	if (event.message.text === 'test1') {
 		return client.replyMessage(event.replyToken, [
 			{
 				type: 'template',
@@ -66,10 +66,42 @@ function handleEvent(event) {
 						{ label: '測試2', type: 'postback', data: '測試2', text: '測試2' },
 						{ label: '測試3', type: 'postback', data: '測試3', text: '測試3' },
 						{ label: '測試4', type: 'postback', data: '測試4', text: '測試4' },
+					],
+				},
+			}
+		]);
+	}
+	if (event.message.text === 'test2') {
+		return client.replyMessage(event.replyToken, [
+			{
+				type: 'template',
+				altText: 'Buttons alt text',
+				template: {
+					type: 'buttons',
+					thumbnailImageUrl: 'https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/buttons/1040.jpg',
+					title: '測試功能',
+					text: '請點選想測試的:',
+					actions: [
 						{ label: '測試5', type: 'postback', data: '測試5', text: '測試5' },
 						{ label: '測試6', type: 'postback', data: '測試6', text: '測試6' },
 						{ label: '測試7', type: 'postback', data: '測試7', text: '測試7' },
 						{ label: '測試8', type: 'postback', data: '測試8', text: '測試8' },
+					],
+				},
+			}
+		]);
+	}
+		if (event.message.text === 'test3') {
+		return client.replyMessage(event.replyToken, [
+			{
+				type: 'template',
+				altText: 'Buttons alt text',
+				template: {
+					type: 'buttons',
+					thumbnailImageUrl: 'https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/buttons/1040.jpg',
+					title: '測試功能',
+					text: '請點選想測試的:',
+					actions: [
 						{ label: '測試9', type: 'postback', data: '測試9', text: '測試9' },
 						{ label: '測試10', type: 'postback', data: '測試10', text: '測試10' },
 					],
@@ -77,7 +109,6 @@ function handleEvent(event) {
 			}
 		]);
 	}
-
 	if (event.message.text == '測試1') {
 		return client.replyMessage(event.replyToken, [
 			{
