@@ -31,8 +31,8 @@ app.post('/callback', line.middleware(config), (req, res) => {
 // event handler
 function handleEvent(event) {
   if (event.type !== 'message' || event.message.type !== 'text') {
-    // ignore non-text-message event
-    return Promise.resolve(null);
+	// ignore non-text-message event
+	return Promise.resolve(null);
   }
 
 	
@@ -134,81 +134,6 @@ function handleEvent(event) {
                 address: "〒150-0002 東京都渋谷区渋谷２丁目２１−１",
                 latitude: 35.65910807942215,
                 longitude: 139.70372892916203
-            }
-        ]);
-    }
-    if (event.message.text === '測試6') {
-        return client.replyMessage(event.replyToken, [
-            {
-                type: 'imagemap',
-                baseUrl: 'https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/rich',
-                altText: 'Imagemap alt text',
-                baseSize: { width: 1040, height: 1040 },
-                actions: [
-                    { area: { x: 0, y: 0, width: 520, height: 520 }, type: 'uri', linkUri: 'https://store.line.me/family/manga/en' },
-                    { area: { x: 520, y: 0, width: 520, height: 520 }, type: 'uri', linkUri: 'https://store.line.me/family/music/en' },
-                    { area: { x: 0, y: 520, width: 520, height: 520 }, type: 'uri', linkUri: 'https://store.line.me/family/play/en' },
-                    { area: { x: 520, y: 520, width: 520, height: 520 }, type: 'message', text: 'URANAI!' },
-                ],
-                video: {
-                    originalContentUrl: 'https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/imagemap/video.mp4',
-                    previewImageUrl: 'https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/imagemap/preview.jpg',
-                    area: {
-                        x: 280,
-                        y: 385,
-                        width: 480,
-                        height: 270,
-                    },
-                    externalLink: {
-                        linkUri: 'https://line.me',
-                        label: 'LINE'
-                    }
-                },
-            }
-        ]);
-    }
-	if (event.message.text === '測試7') {
-        return client.replyMessage(event.replyToken, [
-            {
-                type: 'template',
-                altText: 'Buttons alt text',
-                template: {
-                    type: 'buttons',
-                    thumbnailImageUrl: 'https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/buttons/1040.jpg',
-                    title: 'My button sample',
-                    text: 'Hello, my button',
-                    actions: [
-                        { label: 'Go to line.me', type: 'uri', uri: 'https://line.me' },
-                        { label: 'Say hello1', type: 'postback', data: 'hello こんにちは' },
-                        { label: '言 hello2', type: 'postback', data: 'hello こんにちは', text: 'hello こんにちは' },
-                        { label: 'Say message', type: 'message', text: 'Rice=米' },
-                    ],
-                },
-            }
-        ]);
-    }
-	if (event.message.text === '測試8') {
-        return client.replyMessage(event.replyToken, [
-            {
-                type: 'flex',
-                altText: 'this is a flex message',
-                contents: {
-                    type: 'bubble',
-                    body: {
-                        type: 'box',
-                        layout: 'vertical',
-                        contents: [
-                            {
-                                type: 'text',
-                                text: 'hello'
-                            },
-                            {
-                                type: 'text',
-                                text: 'world'
-                            }
-                        ]
-                    }
-                }
             }
         ]);
     }
