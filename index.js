@@ -38,9 +38,7 @@ function handleEvent(event) {
 	
   // create a echoing text message
   const echo = { type: 'text', text: event.message.text };
-/*
-  // use reply API
-  //return client.replyMessage(event.replyToken, echo);
+
   if (event.message.text == '我很笨忘了地點') {
 		  return client.replyMessage(event.replyToken, [
 					  {
@@ -49,6 +47,54 @@ function handleEvent(event) {
 						address: "新竹市香山區海埔路588號",
 						latitude: 24.822635434550303, 
 						longitude: 120.9106672689193
+					  }
+			]);
+  }
+  /*
+  if (event.message.text === '測試1') {
+        return client.replyMessage(event.replyToken, [
+            {
+                type: 'sticker',
+                packageId: '1',
+                stickerId: '1'
+            }
+        ]);
+  }
+  
+  
+  if (event.message.text == '婚紗') {
+		  return client.replyMessage(event.replyToken, [
+					  {
+						type: 'template',
+						template: {
+							type: "image_carousel",
+							columns: [
+							  {
+								imageUrl: "https://example.com/bot/images/item1.jpg",
+								action: {
+								  type: "postback",
+								  label: "Buy",
+								  data: "action=buy&itemid=111"
+								}
+							  },
+							  {
+								imageUrl: "https://example.com/bot/images/item2.jpg",
+								action: {
+								  type: "message",
+								  label: "Yes",
+								  text: "yes"
+								}
+							  },
+							  {
+								imageUrl: "https://example.com/bot/images/item3.jpg",
+								action: {
+								  type: "uri",
+								  label: "View detail",
+								  uri: "http://example.com/page/222"
+								}
+							  }
+							]
+						  }
 					  }
 			]);
   }
@@ -61,7 +107,120 @@ function handleEvent(event) {
                 stickerId: '1'
             }
         ]);
-  }
+    }
+	if (event.message.text === '測試2') {
+        return client.replyMessage(event.replyToken, [
+            {
+                type: 'image',
+                originalContentUrl: 'https://developers.line.biz/media/messaging-api/messages/image-full-04fbba55.png',
+                previewImageUrl: 'https://developers.line.biz/media/messaging-api/messages/image-167efb33.png'
+            }
+        ]);
+    }
+	if (event.message.text === '測試3') {
+        return client.replyMessage(event.replyToken, [
+            {
+                type: 'video',
+                originalContentUrl: 'https://www.sample-videos.com/video123/mp4/240/big_buck_bunny_240p_1mb.mp4',
+                previewImageUrl: 'https://www.sample-videos.com/img/Sample-jpg-image-50kb.jpg'
+            }
+        ]);
+    }
+	if (event.message.text === '測試4') {
+        return client.replyMessage(event.replyToken, [
+            {
+                type: 'audio',
+                originalContentUrl: 'https://www.sample-videos.com/audio/mp3/crowd-cheering.mp3',
+                duration: '27000'
+            }
+        ]);
+    }
+	if (event.message.text === '測試5') {
+        return client.replyMessage(event.replyToken, [
+            {
+                type: 'location',
+                title: 'my location',
+                address: "〒150-0002 東京都渋谷区渋谷２丁目２１−１",
+                latitude: 35.65910807942215,
+                longitude: 139.70372892916203
+            }
+        ]);
+    }
+    if (event.message.text === '測試6') {
+        return client.replyMessage(event.replyToken, [
+            {
+                type: 'imagemap',
+                baseUrl: 'https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/rich',
+                altText: 'Imagemap alt text',
+                baseSize: { width: 1040, height: 1040 },
+                actions: [
+                    { area: { x: 0, y: 0, width: 520, height: 520 }, type: 'uri', linkUri: 'https://store.line.me/family/manga/en' },
+                    { area: { x: 520, y: 0, width: 520, height: 520 }, type: 'uri', linkUri: 'https://store.line.me/family/music/en' },
+                    { area: { x: 0, y: 520, width: 520, height: 520 }, type: 'uri', linkUri: 'https://store.line.me/family/play/en' },
+                    { area: { x: 520, y: 520, width: 520, height: 520 }, type: 'message', text: 'URANAI!' },
+                ],
+                video: {
+                    originalContentUrl: 'https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/imagemap/video.mp4',
+                    previewImageUrl: 'https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/imagemap/preview.jpg',
+                    area: {
+                        x: 280,
+                        y: 385,
+                        width: 480,
+                        height: 270,
+                    },
+                    externalLink: {
+                        linkUri: 'https://line.me',
+                        label: 'LINE'
+                    }
+                },
+            }
+        ]);
+    }
+	if (event.message.text === '測試7') {
+        return client.replyMessage(event.replyToken, [
+            {
+                type: 'template',
+                altText: 'Buttons alt text',
+                template: {
+                    type: 'buttons',
+                    thumbnailImageUrl: 'https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/buttons/1040.jpg',
+                    title: 'My button sample',
+                    text: 'Hello, my button',
+                    actions: [
+                        { label: 'Go to line.me', type: 'uri', uri: 'https://line.me' },
+                        { label: 'Say hello1', type: 'postback', data: 'hello こんにちは' },
+                        { label: '言 hello2', type: 'postback', data: 'hello こんにちは', text: 'hello こんにちは' },
+                        { label: 'Say message', type: 'message', text: 'Rice=米' },
+                    ],
+                },
+            }
+        ]);
+    }
+	if (event.message.text === '測試8') {
+        return client.replyMessage(event.replyToken, [
+            {
+                type: 'flex',
+                altText: 'this is a flex message',
+                contents: {
+                    type: 'bubble',
+                    body: {
+                        type: 'box',
+                        layout: 'vertical',
+                        contents: [
+                            {
+                                type: 'text',
+                                text: 'hello'
+                            },
+                            {
+                                type: 'text',
+                                text: 'world'
+                            }
+                        ]
+                    }
+                }
+            }
+        ]);
+    }
   */
 
 	// use reply API
