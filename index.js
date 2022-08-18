@@ -231,16 +231,12 @@ function handleEvent(event) {
 					columns: [
 					  {
 						imageUrl: 'https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/buttons/1040.jpg',
-						title: '朵瑞斯',
-						text: '來自熱情洋溢的海島',
-						actions: { label: '查看更多', type: 'uri', uri: 'https://line.me' }
+						action: { label: '查看更多', type: 'uri', uri: 'https://line.me' }
 						
 					  },
 					  {
 						imageUrl: 'https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/imagemap/preview.jpg',
-						title: '凱恩',
-						text: '就是愛音樂！',
-						actions: { label: '查看更多', type: 'uri', uri: 'https://line.me' }
+						action: { label: '查看更多', type: 'uri', uri: 'https://line.me' }
 					  },
 					]
 				},
