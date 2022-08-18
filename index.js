@@ -201,7 +201,7 @@ function handleEvent(event) {
 						title: '朵瑞斯',
 						text: '來自熱情洋溢的海島',
 						actions: [
-							{ label: 'Say message', type: 'message', text: 'Rice=米' },
+							{ label: 'Say message', type: 'message', text: '朵瑞斯 讚' },
 						    { label: '查看更多', type: 'uri', uri: 'https://line.me' },
 						],
 					  },
@@ -210,7 +210,7 @@ function handleEvent(event) {
 						title: '凱恩',
 						text: '就是愛音樂！',
 						actions: [
-							{ label: 'Say message', type: 'message', text: 'Rice=米' },
+							{ label: 'Say message', type: 'message', text: '凱恩 讚' },
 						    { label: '查看更多', type: 'uri', uri: 'https://line.me' },
 						],
 					  },
@@ -224,22 +224,29 @@ function handleEvent(event) {
         return client.replyMessage(event.replyToken, [
             {
                 type: 'template',
-                altText: 'this is a image_carousel template',
-                template: {
-                    type: 'image_carousel',
-					"columns": [
-					{
-						thumbnailImageUrl: 'https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/buttons/1040.jpg',
-						title: 'My button sample3',
-						text: 'Hello, my button3',
+                altText: '最佳主持人票選',
+			    template: {
+					type: 'image_carousel',
+					imageAspectRatio: 'square',
+					columns: [
+					  {
+						imageUrl: 'https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/buttons/1040.jpg',
+						title: '朵瑞斯',
+						text: '來自熱情洋溢的海島',
 						actions: [
-							{ label: 'Go to line.me', type: 'uri', uri: 'https://line.me' },
-							{ label: 'Say hello1', type: 'postback', data: 'hello こんにちは' },
-							{ label: '言 hello2', type: 'postback', data: 'hello こんにちは', text: 'hello こんにちは' },
-							{ label: 'Say message', type: 'message', text: 'Rice=米' },
+						    { label: '查看更多', type: 'uri', uri: 'https://line.me' },
 						],
-					}
-				]}
+					  },
+					  {
+						imageUrl: 'https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/imagemap/preview.jpg',
+						title: '凱恩',
+						text: '就是愛音樂！',
+						actions: [
+						    { label: '查看更多', type: 'uri', uri: 'https://line.me' },
+						],
+					  },
+					],
+				},
             }
         ]);
     }
