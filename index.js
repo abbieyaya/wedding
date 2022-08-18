@@ -227,7 +227,6 @@ function handleEvent(event) {
                 altText: '最佳主持人票選',
 			    template: {
 					type: 'image_carousel',
-					imageAspectRatio: 'square',
 					columns: [
 					  {
 						imageUrl: 'https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/buttons/1040.jpg',
@@ -237,7 +236,7 @@ function handleEvent(event) {
 					  {
 						imageUrl: 'https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/imagemap/preview.jpg',
 						action: { label: '查看更多', type: 'uri', uri: 'https://line.me' }
-					  },
+					  }
 					]
 				},
             }
