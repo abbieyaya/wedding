@@ -38,7 +38,7 @@ function handleEvent(event) {
 	
   // create a echoing text message
   const echo = { type: 'text', text: event.message.text };
-
+/*
   // use reply API
   //return client.replyMessage(event.replyToken, echo);
   if (event.message.text == '我很笨忘了地點') {
@@ -62,8 +62,7 @@ function handleEvent(event) {
             }
         ]);
   }
-	// create a echoing text message
-	const echo = { type: 'text', text: event.message.text };
+  */
 
 	// use reply API
 	return client.replyMessage(event.replyToken, echo);
