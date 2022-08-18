@@ -103,8 +103,8 @@ function handleEvent(event) {
         return client.replyMessage(event.replyToken, [
             {
                 type: 'image',
-                originalContentUrl: 'https://developers.line.biz/media/messaging-api/messages/image-full-04fbba55.png',
-                previewImageUrl: 'https://developers.line.biz/media/messaging-api/messages/image-167efb33.png'
+                originalContentUrl: 'https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/imagemap/preview.jpg',
+                previewImageUrl: 'https://raw.githubusercontent.com/line/line-bot-sdk-nodejs/master/examples/kitchensink/static/buttons/1040.jpg'
             }
         ]);
     }
