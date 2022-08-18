@@ -197,8 +197,8 @@ function handleEvent(event) {
 					columns: [
 					{
 						thumbnailImageUrl: 'https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/buttons/1040.jpg',
-						title: 'My button sample',
-						text: 'Hello, my button',
+						title: 'My button sample1',
+						text: 'Hello, my button1',
 						actions: [
 							{ label: 'Go to line.me', type: 'uri', uri: 'https://line.me' },
 							{ label: 'Say hello1', type: 'postback', data: 'hello こんにちは' },
@@ -208,8 +208,8 @@ function handleEvent(event) {
 					},
 					{
 						thumbnailImageUrl: 'https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/buttons/1040.jpg',
-						title: 'My button sample',
-						text: 'Hello, my button',
+						title: 'My button sample2',
+						text: 'Hello, my button2',
 						actions: [
 							{ label: 'Go to line.me', type: 'uri', uri: 'https://line.me' },
 							{ label: 'Say hello1', type: 'postback', data: 'hello こんにちは' },
@@ -218,25 +218,26 @@ function handleEvent(event) {
 						],
 					}
 				],
-				//imageAspectRatio: "rectangle",
-				//imageSize: "cover"
+				imageAspectRatio: "rectangle",
+				imageSize: "cover"
 				
 				}
             }
         ]);
     }
-		if (event.message.text === '測試9') {
+
+	if (event.message.text === '測試9') {
         return client.replyMessage(event.replyToken, [
             {
                 type: 'template',
-                altText: 'this is a carousel template',
+                altText: 'this is a image_carousel template',
                 template: {
-                    type: 'carousel',
+                    type: 'image_carousel',
 					"columns": [
 					{
 						thumbnailImageUrl: 'https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/buttons/1040.jpg',
-						title: 'My button sample',
-						text: 'Hello, my button',
+						title: 'My button sample3',
+						text: 'Hello, my button3',
 						actions: [
 							{ label: 'Go to line.me', type: 'uri', uri: 'https://line.me' },
 							{ label: 'Say hello1', type: 'postback', data: 'hello こんにちは' },
@@ -249,29 +250,6 @@ function handleEvent(event) {
         ]);
     }
 	if (event.message.text === '測試10') {
-        return client.replyMessage(event.replyToken, [
-            {
-                type: 'template',
-                altText: 'this is a carousel template',
-                template: {
-                    type: 'image_carousel',
-					"columns": [
-					{
-						thumbnailImageUrl: 'https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/buttons/1040.jpg',
-						title: 'My button sample',
-						text: 'Hello, my button',
-						actions: [
-							{ label: 'Go to line.me', type: 'uri', uri: 'https://line.me' },
-							{ label: 'Say hello1', type: 'postback', data: 'hello こんにちは' },
-							{ label: '言 hello2', type: 'postback', data: 'hello こんにちは', text: 'hello こんにちは' },
-							{ label: 'Say message', type: 'message', text: 'Rice=米' },
-						],
-					}
-				]}
-            }
-        ]);
-    }
-	if (event.message.text === '測試11') {
         return client.replyMessage(event.replyToken, [
             {
                 type: 'flex',
