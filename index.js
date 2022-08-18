@@ -28,14 +28,6 @@ app.post('/callback', line.middleware(config), (req, res) => {
     });
 });
 
-let fake_candidates =
-  [
-    { id: 1, name: 'doris', vote: 0 },
-    { id: 2, name: 'ken', vote: 0 },
-    { id: 3, name: 'eric', vote: 0 },
-    { id: 4, name: 'richfather', vote: 0 },
-  ]
-
 // event handler
 function handleEvent(event) {
   if (event.type !== 'message' || event.message.type !== 'text') {
