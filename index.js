@@ -190,6 +190,86 @@ function handleEvent(event) {
 	if (event.message.text === '測試8') {
         return client.replyMessage(event.replyToken, [
             {
+                type: 'template',
+                altText: 'this is a carousel template',
+                template: {
+                    type: 'carousel',
+					"columns": [
+					{
+						thumbnailImageUrl: 'https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/buttons/1040.jpg',
+						title: 'My button sample',
+						text: 'Hello, my button',
+						actions: [
+							{ label: 'Go to line.me', type: 'uri', uri: 'https://line.me' },
+							{ label: 'Say hello1', type: 'postback', data: 'hello こんにちは' },
+							{ label: '言 hello2', type: 'postback', data: 'hello こんにちは', text: 'hello こんにちは' },
+							{ label: 'Say message', type: 'message', text: 'Rice=米' },
+						],
+					},
+					{
+						thumbnailImageUrl: 'https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/buttons/1040.jpg',
+						title: 'My button sample',
+						text: 'Hello, my button',
+						actions: [
+							{ label: 'Go to line.me', type: 'uri', uri: 'https://line.me' },
+							{ label: 'Say hello1', type: 'postback', data: 'hello こんにちは' },
+							{ label: '言 hello2', type: 'postback', data: 'hello こんにちは', text: 'hello こんにちは' },
+							{ label: 'Say message', type: 'message', text: 'Rice=米' },
+						],
+					}
+				]}
+            }
+        ]);
+    }
+		if (event.message.text === '測試9') {
+        return client.replyMessage(event.replyToken, [
+            {
+                type: 'template',
+                altText: 'this is a carousel template',
+                template: {
+                    type: 'carousel',
+					"columns": [
+					{
+						thumbnailImageUrl: 'https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/buttons/1040.jpg',
+						title: 'My button sample',
+						text: 'Hello, my button',
+						actions: [
+							{ label: 'Go to line.me', type: 'uri', uri: 'https://line.me' },
+							{ label: 'Say hello1', type: 'postback', data: 'hello こんにちは' },
+							{ label: '言 hello2', type: 'postback', data: 'hello こんにちは', text: 'hello こんにちは' },
+							{ label: 'Say message', type: 'message', text: 'Rice=米' },
+						],
+					}
+				]}
+            }
+        ]);
+    }
+	if (event.message.text === '測試10') {
+        return client.replyMessage(event.replyToken, [
+            {
+                type: 'template',
+                altText: 'this is a carousel template',
+                template: {
+                    type: 'image_carousel',
+					"columns": [
+					{
+						thumbnailImageUrl: 'https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/buttons/1040.jpg',
+						title: 'My button sample',
+						text: 'Hello, my button',
+						actions: [
+							{ label: 'Go to line.me', type: 'uri', uri: 'https://line.me' },
+							{ label: 'Say hello1', type: 'postback', data: 'hello こんにちは' },
+							{ label: '言 hello2', type: 'postback', data: 'hello こんにちは', text: 'hello こんにちは' },
+							{ label: 'Say message', type: 'message', text: 'Rice=米' },
+						],
+					}
+				]}
+            }
+        ]);
+    }
+	if (event.message.text === '測試11') {
+        return client.replyMessage(event.replyToken, [
+            {
                 type: 'flex',
                 altText: 'this is a flex message',
                 contents: {
