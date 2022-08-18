@@ -201,10 +201,19 @@ function handleEvent(event) {
 						title: '朵瑞斯',
 						text: '來自熱情洋溢的海島',
 						actions: [
-						  { label: '投我一票', type: 'postback', displayText: '投朵瑞斯一票', text: '朵瑞斯 good' },
-						  { label: '查看更多', type: 'uri', uri: 'https://line.me' },
+							{ label: 'Say message', type: 'message', text: 'Rice=米' },
+						    { label: '查看更多', type: 'uri', uri: 'https://line.me' },
 						],
-					  }
+					  },
+					  {
+						thumbnailImageUrl: 'https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/imagemap/preview.jpg',
+						title: '凱恩',
+						text: '就是愛音樂！',
+						actions: [
+							{ label: 'Say message', type: 'message', text: 'Rice=米' },
+						    { label: '查看更多', type: 'uri', uri: 'https://line.me' },
+						],
+					  },
 					],
 				},
             }
