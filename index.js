@@ -50,8 +50,8 @@ function handleEvent(event) {
 					  }
 			]);
   }
-  /*
-  if (event.message.text === '測試1') {
+  
+  if (event.message.text == '測試1') {
         return client.replyMessage(event.replyToken, [
             {
                 type: 'sticker',
@@ -61,7 +61,7 @@ function handleEvent(event) {
         ]);
   }
   
-  
+  /*
   if (event.message.text == '婚紗') {
 		  return client.replyMessage(event.replyToken, [
 					  {
