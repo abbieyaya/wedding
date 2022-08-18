@@ -53,43 +53,6 @@ function handleEvent(event) {
 			]);
   }
   
-  if (event.message.text == '婚紗') {
-		  return client.replyMessage(event.replyToken, [
-					  {
-						type: 'template',
-						template: {
-							type: "image_carousel",
-							columns: [
-							  {
-								imageUrl: "https://example.com/bot/images/item1.jpg",
-								action: {
-								  type: "postback",
-								  label: "Buy",
-								  data: "action=buy&itemid=111"
-								}
-							  },
-							  {
-								imageUrl: "https://example.com/bot/images/item2.jpg",
-								action: {
-								  type: "message",
-								  label: "Yes",
-								  text: "yes"
-								}
-							  },
-							  {
-								imageUrl: "https://example.com/bot/images/item3.jpg",
-								action: {
-								  type: "uri",
-								  label: "View detail",
-								  uri: "http://example.com/page/222"
-								}
-							  }
-							]
-						  }
-					  }
-			]);
-  }
-  
   if (event.message.text === '測試1') {
         return client.replyMessage(event.replyToken, [
             {
@@ -98,7 +61,7 @@ function handleEvent(event) {
                 stickerId: '1'
             }
         ]);
-    }
+  }
 	// create a echoing text message
 	const echo = { type: 'text', text: event.message.text };
 
