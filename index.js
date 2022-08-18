@@ -91,31 +91,11 @@ function handleEvent(event) {
   }
   
   if (event.message.text === '測試1') {
-		// create a echoing text message
-		const echo = { type: 'text', text: event.message.text };
-
-		// use reply API
-		return client.replyMessage(event.replyToken, echo);
         return client.replyMessage(event.replyToken, [
             {
                 type: 'sticker',
                 packageId: '1',
                 stickerId: '1'
-            },
-            {
-                type: 'image',
-                originalContentUrl: 'https://developers.line.biz/media/messaging-api/messages/image-full-04fbba55.png',
-                previewImageUrl: 'https://developers.line.biz/media/messaging-api/messages/image-167efb33.png'
-            },
-            {
-                type: 'video',
-                originalContentUrl: 'https://www.sample-videos.com/video123/mp4/240/big_buck_bunny_240p_1mb.mp4',
-                previewImageUrl: 'https://www.sample-videos.com/img/Sample-jpg-image-50kb.jpg'
-            },
-            {
-                type: 'audio',
-                originalContentUrl: 'https://www.sample-videos.com/audio/mp3/crowd-cheering.mp3',
-                duration: '27000'
             },
             {
                 type: 'location',
@@ -194,6 +174,13 @@ function handleEvent(event) {
             }
         ]);
     }
+	
+	
+	// create a echoing text message
+	const echo = { type: 'text', text: event.message.text };
+
+	// use reply API
+	return client.replyMessage(event.replyToken, echo);
 }
 
 // listen on port
