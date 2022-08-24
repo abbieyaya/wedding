@@ -379,9 +379,7 @@ const richMenuObjectB = () => ({
 
 const main = async (client) => {
   // 2. Create rich menu A (richmenu-a)
-  const richMenuAId = await client.createRichMenu(
-    richMenuObjectA()
-  )
+  const richMenuAId = await client.createRichMenu(richMenuObjectA())
 
   // 3. Upload image to rich menu A
   const filepathA = join(__dirname, './public/richmenu-a.png')
@@ -399,7 +397,7 @@ const main = async (client) => {
   await client.setRichMenuImage(richMenuBId, bufferB);
 
   // 6. Set rich menu A as the default rich menu
-  await client.setDefaultRichMenu(richMenuAId)
+  await client.setDefaultRichMenu(richMenuBId)
 
   // 7. Create rich menu alias A
   await client.createRichMenuAlias(richMenuAId, 'richmenu-alias-a')
