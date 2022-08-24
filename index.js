@@ -400,10 +400,10 @@ const main = async (client) => {
   await client.setDefaultRichMenu(richMenuAId)
 
   // 7. Create rich menu alias A
-  await client.createRichMenuAlias(richMenuAId, 'richmenua')
+  await client.createRichMenuAlias(richMenuAId, "richmenua")
 
   // 8. Create rich menu alias B
-  await client.createRichMenuAlias(richMenuBId, 'richmenub')
+  await client.createRichMenuAlias(richMenuBId, "richmenub")
   console.log('success')
 }
 
