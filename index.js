@@ -320,8 +320,9 @@ const richMenuObjectA = () => ({
         height: 1686
       },
       action: {
-        type: "uri",
-        uri: "https://www.line-community.me/"
+        type: "richmenuswitch",
+        richMenuAliasId: "richmenub",
+        data: "richmenu-changed-to-b"
       }
     },
     {
@@ -362,7 +363,7 @@ const richMenuObjectB = () => ({
         data: "richmenu-changed-to-a"
       }
     },
-      {
+    {
       bounds: {
         x: 1251,
         y: 0,
