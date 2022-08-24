@@ -333,7 +333,7 @@ const richMenuObjectA = () => ({
       },
       action: {
         type: "richmenuswitch",
-        richMenuAliasId: "richmenu-alias-b",
+        richMenuAliasId: "richmenub",
         data: "richmenu-changed-to-b"
       }
     }
@@ -358,7 +358,7 @@ const richMenuObjectB = () => ({
       },
       action: {
         type: "richmenuswitch",
-        richMenuAliasId: "richmenu-alias-a",
+        richMenuAliasId: "richmenua",
         data: "richmenu-changed-to-a"
       }
     },
@@ -400,10 +400,10 @@ const main = async (client) => {
   await client.setDefaultRichMenu(richMenuBId)
 
   // 7. Create rich menu alias A
-  await client.createRichMenuAlias(richMenuAId, 'richmenu-alias-a')
+  await client.createRichMenuAlias(richMenuAId, 'richmenua')
 
   // 8. Create rich menu alias B
-  await client.createRichMenuAlias(richMenuBId, 'richmenu-alias-b')
+  await client.createRichMenuAlias(richMenuBId, 'richmenub')
   console.log('success')
 }
 
