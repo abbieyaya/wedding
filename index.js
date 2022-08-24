@@ -308,7 +308,7 @@ const richMenuObjectA = () => ({
     width: 2500,
     height: 1686
   },
-  selected: false,
+  selected: true,
   name: "richmenu-a",
   chatBarText: "Tap to open",
   areas: [
@@ -397,7 +397,7 @@ const main = async (client) => {
   await client.setRichMenuImage(richMenuBId, bufferB);
 
   // 6. Set rich menu A as the default rich menu
-  await client.setDefaultRichMenu(richMenuBId)
+  await client.setDefaultRichMenu(richMenuAId)
 
   // 7. Create rich menu alias A
   await client.createRichMenuAlias(richMenuAId, 'richmenua')
