@@ -306,7 +306,7 @@ const { readFileSync } = require("fs");
 const richMenuObjectA = () => ({
   size: {
     width: 2500,
-    height: 1686
+    height: 843
   },
   selected: true,
   name: "richmenu-a",
@@ -317,12 +317,11 @@ const richMenuObjectA = () => ({
         x: 0,
         y: 0,
         width: 1250,
-        height: 1686
+        height: 843
       },
       action: {
-        type: "richmenuswitch",
-        richMenuAliasId: "richmenub",
-        data: "richmenu-changed-to-b"
+        type: "uri",
+        uri: "https://www.line-community.me/"
       }
     },
     {
@@ -330,11 +329,10 @@ const richMenuObjectA = () => ({
         x: 1251,
         y: 0,
         width: 1250,
-        height: 1686
+        height: 843
       },
       action: {
-        type: "richmenuswitch",
-        richMenuAliasId: "richmenub",
+        type: "postback",
         data: "richmenu-changed-to-b"
       }
     }
