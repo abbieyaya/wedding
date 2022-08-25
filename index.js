@@ -316,19 +316,31 @@ const richMenuObjectA = () => ({
       bounds: {
         x: 0,
         y: 0,
-        width: 1250,
+        width: 833,
         height: 843
       },
       action: {
         type: "uri",
-        uri: "https://www.line-community.me/"
+        uri: "https://www.surveycake.com/s/rAROd"
       }
     },
     {
       bounds: {
-        x: 1251,
+        x: 833,
         y: 0,
-        width: 1250,
+        width: 833,
+        height: 843
+      },
+      action: {
+        type: "postback",
+        data: "richmenu-changed-to-b"
+      }
+    },
+    {
+      bounds: {
+        x: 1666,
+        y: 0,
+        width: 833,
         height: 843
       },
       action: {
@@ -339,70 +351,22 @@ const richMenuObjectA = () => ({
   ]
 })
 
-const richMenuObjectB = () => ({
-  size: {
-    width: 2500,
-    height: 1686
-  },
-  selected: false,
-  name: "richmenu-b",
-  chatBarText: "Tap to open",
-  areas: [
-    {
-      bounds: {
-        x: 0,
-        y: 0,
-        width: 1250,
-        height: 1686
-      },
-      action: {
-        type: "richmenuswitch",
-        richMenuAliasId: "richmenua",
-        data: "richmenu-changed-to-a"
-      }
-    },
-    {
-      bounds: {
-        x: 1251,
-        y: 0,
-        width: 1250,
-        height: 1686
-      },
-      action: {
-        type: "uri",
-        uri: "https://www.line-community.me/"
-      }
-    }
-  ]
-})
-
 const main = async (client) => {
-  // 2. Create rich menu A (richmenu-a)
+  // Create rich menu A (richmenu-a)
   const richMenuAId = await client.createRichMenu(richMenuObjectA())
 
-  // 3. Upload image to rich menu A
+  // Upload image to rich menu A
   const filepathA = join(__dirname, './public/marble.jpg')
   const bufferA = readFileSync(filepathA)
 
   await client.setRichMenuImage(richMenuAId, bufferA)
 
-  // 4. Create rich menu B (richmenu-b)
-  const richMenuBId = await client.createRichMenu(richMenuObjectB())
-
-  // 5. Upload image to rich menu B
-  const filepathB = join(__dirname, './public/richmenu-b.png')
-  const bufferB = readFileSync(filepathB);
-
-  await client.setRichMenuImage(richMenuBId, bufferB);
-
-  // 6. Set rich menu A as the default rich menu
+  // Set rich menu A as the default rich menu
   await client.setDefaultRichMenu(richMenuAId)
 
-  // 7. Create rich menu alias A
+  // Create rich menu alias A
   await client.createRichMenuAlias(richMenuAId, "richmenua")
 
-  // 8. Create rich menu alias B
-  await client.createRichMenuAlias(richMenuBId, "richmenub")
   console.log('success')
 }
 
