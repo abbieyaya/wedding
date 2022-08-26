@@ -2,8 +2,6 @@
 
 const line = require('@line/bot-sdk');
 const express = require('express');
-const { join } = require("path");
-const { readFileSync } = require("fs");
 
 // create LINE SDK config from env variables
 const config = {
@@ -13,78 +11,6 @@ const config = {
 
 // create LINE SDK client
 const client = new line.Client(config);
-
-
-const richMenuObjectA = () => ({
-  size: {
-    width: 2500,
-    height: 843
-  },
-  selected: true,
-  name: "richmenu-a",
-  chatBarText: "Tap to open",
-  areas: [
-    {
-      bounds: {
-        x: 0,
-        y: 0,
-        width: 833,
-        height: 843
-      },
-      action: {
-        type: "uri",
-        uri: "https://www.surveycake.com/s/rAROd"
-      }
-    },
-    {
-      bounds: {
-        x: 833,
-        y: 0,
-        width: 833,
-        height: 843
-      },
-      action: {
-        type: "message",
-        label: "婚紗",
-		text: "婚紗"
-      }
-    },
-    {
-      bounds: {
-        x: 1666,
-        y: 0,
-        width: 833,
-        height: 843
-      },
-      action: {
-        type: "message",
-        label: "地點",
-		text: "地點"
-      }
-    }
-  ]
-})
-
-const main = async (client) => {
-  // Create rich menu A (richmenu-a)
-  const richMenuAId = await client.createRichMenu(richMenuObjectA())
-
-  // Upload image to rich menu A
-  const filepathA = join(__dirname, './public/marble_2.jpg')
-  const bufferA = readFileSync(filepathA)
-
-  await client.setRichMenuImage(richMenuAId, bufferA)
-
-  // Set rich menu A as the default rich menu
-  await client.setDefaultRichMenu(richMenuAId)
-
-  // Create rich menu alias A
-  await client.createRichMenuAlias(richMenuAId, "richmenua")
-
-  console.log('success')
-}
-
-main(client)
 
 // create Express app
 // about Express itself: https://expressjs.com/
@@ -156,3 +82,79 @@ const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`listening on ${port}`);
 });
+
+/*
+const { join } = require("path");
+const { readFileSync } = require("fs");
+
+const richMenuObjectA = () => ({
+  size: {
+    width: 2500,
+    height: 843
+  },
+  selected: true,
+  name: "richmenu-a",
+  chatBarText: "Tap to open",
+  areas: [
+    {
+      bounds: {
+        x: 0,
+        y: 0,
+        width: 833,
+        height: 843
+      },
+      action: {
+        type: "uri",
+        uri: "https://www.surveycake.com/s/rAROd"
+      }
+    },
+    {
+      bounds: {
+        x: 833,
+        y: 0,
+        width: 833,
+        height: 843
+      },
+      action: {
+        type: "message",
+        label: "婚紗",
+		text: "婚紗"
+      }
+    },
+    {
+      bounds: {
+        x: 1666,
+        y: 0,
+        width: 833,
+        height: 843
+      },
+      action: {
+        type: "message",
+        label: "地點",
+		text: "地點"
+      }
+    }
+  ]
+})
+
+const main = async (client) => {
+  // Create rich menu A (richmenu-a)
+  const richMenuAId = await client.createRichMenu(richMenuObjectA())
+
+  // Upload image to rich menu A
+  const filepathA = join(__dirname, './public/marble_2.jpg')
+  const bufferA = readFileSync(filepathA)
+
+  await client.setRichMenuImage(richMenuAId, bufferA)
+
+  // Set rich menu A as the default rich menu
+  await client.setDefaultRichMenu(richMenuAId)
+
+  // Create rich menu alias A
+  await client.createRichMenuAlias(richMenuAId, "richmenua")
+
+  console.log('success')
+}
+
+main(client)
+*/
