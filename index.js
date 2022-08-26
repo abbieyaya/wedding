@@ -298,7 +298,6 @@ const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`listening on ${port}`);
 });
-/*
 
 const { join } = require("path");
 const { readFileSync } = require("fs");
@@ -351,26 +350,18 @@ const richMenuObjectA = () => ({
   ]
 })
 
-const main = async (client) => {
-  // Create rich menu A (richmenu-a)
-  const richMenuAId = await client.createRichMenu(richMenuObjectA())
 
-  // Upload image to rich menu A
-  const filepathA = join(__dirname, './public/marble.jpg')
-  const bufferA = readFileSync(filepathA)
+// Create rich menu A (richmenu-a)
+const richMenuAId = await client.createRichMenu(richMenuObjectA())
 
-  await client.setRichMenuImage(richMenuAId, bufferA)
+// Upload image to rich menu A
+const filepathA = join(__dirname, './public/marble_2.jpg')
+const bufferA = readFileSync(filepathA)
+  
+await client.setRichMenuImage(richMenuAId, bufferA)
 
-  // Set rich menu A as the default rich menu
-  await client.setDefaultRichMenu(richMenuAId)
+/ Set rich menu A as the default rich menu
+await client.setDefaultRichMenu(richMenuAId)
 
-  // Create rich menu alias A
-  await client.createRichMenuAlias(richMenuAId, "richmenua")
-
-
-
-  console.log('success')
-}
-
-main(client)
-*/
+// Create rich menu alias A
+await client.createRichMenuAlias(richMenuAId, "richmenua")
