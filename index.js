@@ -16,17 +16,7 @@ const client = new line.Client(config);
 // about Express itself: https://expressjs.com/
 const app = express();
 
-// register a webhook handler with middleware
-// about the middleware, please refer to doc
-app.post('/callback', line.middleware(config), (req, res) => {
-  Promise
-    .all(req.body.events.map(handleEvent))
-    .then((result) => res.json(result))
-    .catch((err) => {
-      console.error(err);
-      res.status(500).end();
-    });
-});
+
 
 // event handler
 function handleEvent(event) {
@@ -299,6 +289,7 @@ app.listen(port, () => {
   console.log(`listening on ${port}`);
 });
 
+
 const { join } = require("path");
 const { readFileSync } = require("fs");
 
@@ -350,18 +341,35 @@ const richMenuObjectA = () => ({
   ]
 })
 
+const main = async (client) => {
+  // Create rich menu A (richmenu-a)
+  const richMenuAId = await client.createRichMenu(richMenuObjectA())
 
-// Create rich menu A (richmenu-a)
-const richMenuAId = await client.createRichMenu(richMenuObjectA())
+  // Upload image to rich menu A
+  const filepathA = join(__dirname, './public/marble_2.jpg')
+  const bufferA = readFileSync(filepathA)
 
-// Upload image to rich menu A
-const filepathA = join(__dirname, './public/marble_2.jpg')
-const bufferA = readFileSync(filepathA)
-  
-await client.setRichMenuImage(richMenuAId, bufferA)
+  await client.setRichMenuImage(richMenuAId, bufferA)
 
-/ Set rich menu A as the default rich menu
-await client.setDefaultRichMenu(richMenuAId)
+  // Set rich menu A as the default rich menu
+  await client.setDefaultRichMenu(richMenuAId)
 
-// Create rich menu alias A
-await client.createRichMenuAlias(richMenuAId, "richmenua")
+  // Create rich menu alias A
+  await client.createRichMenuAlias(richMenuAId, "richmenua")
+
+// register a webhook handler with middleware
+// about the middleware, please refer to doc
+app.post('/callback', line.middleware(config), (req, res) => {
+  Promise
+    .all(req.body.events.map(handleEvent))
+    .then((result) => res.json(result))
+    .catch((err) => {
+      console.error(err);
+      res.status(500).end();
+    });
+});
+
+  console.log('success')
+}
+
+main(client)
