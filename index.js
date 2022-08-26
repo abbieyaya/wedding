@@ -16,7 +16,17 @@ const client = new line.Client(config);
 // about Express itself: https://expressjs.com/
 const app = express();
 
-
+// register a webhook handler with middleware
+// about the middleware, please refer to doc
+app.post('/callback', line.middleware(config), (req, res) => {
+  Promise
+    .all(req.body.events.map(handleEvent))
+    .then((result) => res.json(result))
+    .catch((err) => {
+      console.error(err);
+      res.status(500).end();
+    });
+});
 
 // event handler
 function handleEvent(event) {
@@ -322,8 +332,9 @@ const richMenuObjectA = () => ({
         height: 843
       },
       action: {
-        type: "postback",
-        data: "richmenu-changed-to-b"
+        type: "message",
+        label: "婚紗",
+		text: "婚紗"
       }
     },
     {
@@ -334,8 +345,9 @@ const richMenuObjectA = () => ({
         height: 843
       },
       action: {
-        type: "postback",
-        data: "richmenu-changed-to-b"
+        type: "message",
+        label: "地點",
+		text: "地點"
       }
     }
   ]
@@ -356,18 +368,6 @@ const main = async (client) => {
 
   // Create rich menu alias A
   await client.createRichMenuAlias(richMenuAId, "richmenua")
-
-// register a webhook handler with middleware
-// about the middleware, please refer to doc
-app.post('/callback', line.middleware(config), (req, res) => {
-  Promise
-    .all(req.body.events.map(handleEvent))
-    .then((result) => res.json(result))
-    .catch((err) => {
-      console.error(err);
-      res.status(500).end();
-    });
-});
 
   console.log('success')
 }
