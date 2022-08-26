@@ -12,6 +12,9 @@ const config = {
 // create LINE SDK client
 const client = new line.Client(config);
 
+// create Express app
+// about Express itself: https://expressjs.com/
+const app = express();
 
 // register a webhook handler with middleware
 // about the middleware, please refer to doc
@@ -295,11 +298,8 @@ const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`listening on ${port}`);
 });
-
-// create Express app
-// about Express itself: https://expressjs.com/
-const app = express();
 /*
+
 const { join } = require("path");
 const { readFileSync } = require("fs");
 
