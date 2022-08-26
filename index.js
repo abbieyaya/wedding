@@ -296,6 +296,10 @@ app.listen(port, () => {
   console.log(`listening on ${port}`);
 });
 
+// create Express app
+// about Express itself: https://expressjs.com/
+const app = express();
+/*
 const { join } = require("path");
 const { readFileSync } = require("fs");
 
@@ -364,11 +368,9 @@ const main = async (client) => {
   await client.createRichMenuAlias(richMenuAId, "richmenua")
 
 
-// create Express app
-// about Express itself: https://expressjs.com/
-const app = express();
 
   console.log('success')
 }
 
 main(client)
+*/
