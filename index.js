@@ -12,9 +12,6 @@ const config = {
 // create LINE SDK client
 const client = new line.Client(config);
 
-// create Express app
-// about Express itself: https://expressjs.com/
-const app = express();
 
 // register a webhook handler with middleware
 // about the middleware, please refer to doc
@@ -299,7 +296,6 @@ app.listen(port, () => {
   console.log(`listening on ${port}`);
 });
 
-
 const { join } = require("path");
 const { readFileSync } = require("fs");
 
@@ -366,6 +362,11 @@ const main = async (client) => {
 
   // Create rich menu alias A
   await client.createRichMenuAlias(richMenuAId, "richmenua")
+
+
+// create Express app
+// about Express itself: https://expressjs.com/
+const app = express();
 
   console.log('success')
 }
