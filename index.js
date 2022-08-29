@@ -65,7 +65,7 @@ function handleEvent(event) {
 					  },
 					  {
 						imageUrl: 'https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/imagemap/preview.jpg',
-						action: { label: '查看更多', type: 'uri', uri: 'https://line.me' }
+						action: { label: '查看更多', type: 'uri', uri: './photo.html' }
 					  }
 					]
 				},
