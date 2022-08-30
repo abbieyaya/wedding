@@ -68,7 +68,7 @@ function handleEvent(event) {
 						action: { label: '查看更多', type: 'uri', uri: 'https://wedding-photo.onrender.com/test.html' }
 					  },
 					  {
-						imageUrl: 'https://github.com/abbieyaya/wedding_photo/raw/main/Role1.jpg',
+						imageUrl: 'https://raw.githubusercontent.com/abbieyaya/wedding_photo/main/Role1.jpg?token=GHSAT0AAAAAABYE3D6D5CMPNJFSS7MUIQYAYYNWORA',
 						action: { label: '查看更多', type: 'uri', uri: 'https://wedding-photo.onrender.com/ori.html' }
 					  }
 					]
