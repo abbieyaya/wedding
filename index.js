@@ -59,6 +59,10 @@ function handleEvent(event) {
 					type: 'image_carousel',
 					columns: [
 					  {
+						imageUrl: 'https://github.com/abbieyaya/wedding/raw/main/photo/Role1.jpg',
+						action: { label: '查看更多', type: 'uri', uri: 'https://wedding-photo.onrender.com/ori.html' }
+					  },
+					  {
 						imageUrl: 'https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/buttons/1040.jpg',
 						action: { label: '查看更多', type: 'uri', uri: 'https://wedding-photo.onrender.com/photo.html' }
 						
@@ -66,10 +70,6 @@ function handleEvent(event) {
 					  {
 						imageUrl: 'https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/imagemap/preview.jpg',
 						action: { label: '查看更多', type: 'uri', uri: 'https://wedding-photo.onrender.com/test.html' }
-					  },
-					  {
-						imageUrl: 'https://github.com/abbieyaya/wedding/raw/main/photo/Role1.jpg',
-						action: { label: '查看更多', type: 'uri', uri: 'https://wedding-photo.onrender.com/ori.html' }
 					  }
 					]
 				},
