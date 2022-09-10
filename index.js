@@ -55,22 +55,50 @@ function handleEvent(event) {
             {
                 type: 'template',
                 altText: '最佳主持人票選',
-			    template: {
-					type: 'image_carousel',
-					columns: [
+  			    template: {
+  					type: 'image_carousel',
+  					columns: [
 					  {
-						imageUrl: 'https://github.com/abbieyaya/wedding/raw/main/photo/Role1.jpg',
+						imageUrl: 'https://github.com/abbieyaya/wedding/raw/main/photo/1.jpg',
 						action: { label: '查看更多', type: 'uri', uri: 'https://wedding-photo.onrender.com/ori.html' }
 					  },
 					  {
-						imageUrl: 'https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/buttons/1040.jpg',
+						imageUrl: 'https://github.com/abbieyaya/wedding/raw/main/photo/2.jpg',
 						action: { label: '查看更多', type: 'uri', uri: 'https://wedding-photo.onrender.com/photo.html' }
 						
 					  },
-					  {
-						imageUrl: 'https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/imagemap/preview.jpg',
-						action: { label: '查看更多', type: 'uri', uri: 'https://wedding-photo.onrender.com/test.html' }
-					  }
+            {
+            imageUrl: 'https://github.com/abbieyaya/wedding/raw/main/photo/3.jpg',
+            action: { label: '查看更多', type: 'uri', uri: 'https://wedding-photo.onrender.com/test.html' }
+            },
+            {
+            imageUrl: 'https://github.com/abbieyaya/wedding/raw/main/photo/4.jpg',
+            action: { label: '查看更多', type: 'uri', uri: 'https://wedding-photo.onrender.com/test.html' }
+            },
+            {
+            imageUrl: 'https://github.com/abbieyaya/wedding/raw/main/photo/5.jpg',
+            action: { label: '查看更多', type: 'uri', uri: 'https://wedding-photo.onrender.com/test.html' }
+            },
+            {
+            imageUrl: 'https://github.com/abbieyaya/wedding/raw/main/photo/6.jpg',
+            action: { label: '查看更多', type: 'uri', uri: 'https://wedding-photo.onrender.com/test.html' }
+            },
+            {
+            imageUrl: 'https://github.com/abbieyaya/wedding/raw/main/photo/7.jpg',
+            action: { label: '查看更多', type: 'uri', uri: 'https://wedding-photo.onrender.com/test.html' }
+            },
+            {
+            imageUrl: 'https://github.com/abbieyaya/wedding/raw/main/photo/8.jpg',
+            action: { label: '查看更多', type: 'uri', uri: 'https://wedding-photo.onrender.com/test.html' }
+            },
+            {
+            imageUrl: 'https://github.com/abbieyaya/wedding/raw/main/photo/9.jpg',
+            action: { label: '查看更多', type: 'uri', uri: 'https://wedding-photo.onrender.com/test.html' }
+            },
+            {
+            imageUrl: 'https://github.com/abbieyaya/wedding/raw/main/photo/10.jpg',
+            action: { label: '查看更多', type: 'uri', uri: 'https://wedding-photo.onrender.com/test.html' }
+            }
 					]
 				},
             }
