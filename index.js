@@ -115,14 +115,14 @@ app.listen(port, () => {
   console.log(`listening on ${port}`);
 });
 
-/*
+
 const { join } = require("path");
 const { readFileSync } = require("fs");
 
 const richMenuObjectA = () => ({
   size: {
-    width: 2500,
-    height: 843
+    width: 800,
+    height: 540
   },
   selected: true,
   name: "richmenu-a",
@@ -130,10 +130,10 @@ const richMenuObjectA = () => ({
   areas: [
     {
       bounds: {
-        x: 0,
-        y: 0,
-        width: 833,
-        height: 843
+        x: 145,
+        y: 282,
+        width: 150,
+        height: 150
       },
       action: {
         type: "uri",
@@ -142,10 +142,10 @@ const richMenuObjectA = () => ({
     },
     {
       bounds: {
-        x: 833,
-        y: 0,
-        width: 833,
-        height: 843
+        x: 335,
+        y: 282,
+        width: 150,
+        height: 150
       },
       action: {
         type: "message",
@@ -155,10 +155,10 @@ const richMenuObjectA = () => ({
     },
     {
       bounds: {
-        x: 1666,
-        y: 0,
-        width: 833,
-        height: 843
+        x: 518,
+        y: 282,
+        width: 150,
+        height: 150
       },
       action: {
         type: "message",
@@ -174,7 +174,7 @@ const main = async (client) => {
   const richMenuAId = await client.createRichMenu(richMenuObjectA())
 
   // Upload image to rich menu A
-  const filepathA = join(__dirname, './public/marble_2.jpg')
+  const filepathA = join(__dirname, './public/marble_big_2.jpg')
   const bufferA = readFileSync(filepathA)
 
   await client.setRichMenuImage(richMenuAId, bufferA)
@@ -189,4 +189,3 @@ const main = async (client) => {
 }
 
 main(client)
-*/
