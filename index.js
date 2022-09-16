@@ -64,40 +64,40 @@ function handleEvent(event) {
 					  },
 					  {
 						imageUrl: 'https://github.com/abbieyaya/wedding/raw/main/photo/2.jpg',
-						action: { label: '查看更多', type: 'uri', uri: 'https://wedding-photo.onrender.com/photo.html' }
+						action: { label: '查看更多', type: 'uri', uri: 'https://wedding-photo.onrender.com/ori.html' }
 						
 					  },
             {
             imageUrl: 'https://github.com/abbieyaya/wedding/raw/main/photo/3.jpg',
-            action: { label: '查看更多', type: 'uri', uri: 'https://wedding-photo.onrender.com/test.html' }
+            action: { label: '查看更多', type: 'uri', uri: 'https://wedding-photo.onrender.com/ori.html' }
             },
             {
             imageUrl: 'https://github.com/abbieyaya/wedding/raw/main/photo/4.jpg',
-            action: { label: '查看更多', type: 'uri', uri: 'https://wedding-photo.onrender.com/test.html' }
+            action: { label: '查看更多', type: 'uri', uri: 'https://wedding-photo.onrender.com/ori.html' }
             },
             {
             imageUrl: 'https://github.com/abbieyaya/wedding/raw/main/photo/5.jpg',
-            action: { label: '查看更多', type: 'uri', uri: 'https://wedding-photo.onrender.com/test.html' }
+            action: { label: '查看更多', type: 'uri', uri: 'https://wedding-photo.onrender.com/ori.html' }
             },
             {
             imageUrl: 'https://github.com/abbieyaya/wedding/raw/main/photo/6.jpg',
-            action: { label: '查看更多', type: 'uri', uri: 'https://wedding-photo.onrender.com/test.html' }
+            action: { label: '查看更多', type: 'uri', uri: 'https://wedding-photo.onrender.com/ori.html' }
             },
             {
             imageUrl: 'https://github.com/abbieyaya/wedding/raw/main/photo/7.jpg',
-            action: { label: '查看更多', type: 'uri', uri: 'https://wedding-photo.onrender.com/test.html' }
+            action: { label: '查看更多', type: 'uri', uri: 'https://wedding-photo.onrender.com/ori.html' }
             },
             {
             imageUrl: 'https://github.com/abbieyaya/wedding/raw/main/photo/8.jpg',
-            action: { label: '查看更多', type: 'uri', uri: 'https://wedding-photo.onrender.com/test.html' }
+            action: { label: '查看更多', type: 'uri', uri: 'https://wedding-photo.onrender.com/ori.html' }
             },
             {
             imageUrl: 'https://github.com/abbieyaya/wedding/raw/main/photo/9.jpg',
-            action: { label: '查看更多', type: 'uri', uri: 'https://wedding-photo.onrender.com/test.html' }
+            action: { label: '查看更多', type: 'uri', uri: 'https://wedding-photo.onrender.com/ori.html' }
             },
             {
             imageUrl: 'https://github.com/abbieyaya/wedding/raw/main/photo/10.jpg',
-            action: { label: '查看更多', type: 'uri', uri: 'https://wedding-photo.onrender.com/test.html' }
+            action: { label: '查看更多', type: 'uri', uri: 'https://wedding-photo.onrender.com/ori.html' }
             }
 					]
 				},
@@ -130,10 +130,10 @@ const richMenuObjectA = () => ({
   areas: [
     {
       bounds: {
-        x: 145,
-        y: 282,
-        width: 150,
-        height: 150
+        x: 155,
+        y: 195,
+        width: 123,
+        height: 215
       },
       action: {
         type: "uri",
@@ -142,10 +142,10 @@ const richMenuObjectA = () => ({
     },
     {
       bounds: {
-        x: 335,
-        y: 282,
-        width: 150,
-        height: 150
+        x: 330,
+        y: 195,
+        width: 123,
+        height: 215
       },
       action: {
         type: "message",
@@ -155,10 +155,10 @@ const richMenuObjectA = () => ({
     },
     {
       bounds: {
-        x: 518,
-        y: 282,
-        width: 150,
-        height: 150
+        x: 515,
+        y: 195,
+        width: 123,
+        height: 215
       },
       action: {
         type: "message",
@@ -174,7 +174,7 @@ const main = async (client) => {
   const richMenuAId = await client.createRichMenu(richMenuObjectA())
 
   // Upload image to rich menu A
-  const filepathA = join(__dirname, './public/marble_big_2.jpg')
+  const filepathA = join(__dirname, './public/xuan.jpg')
   const bufferA = readFileSync(filepathA)
 
   await client.setRichMenuImage(richMenuAId, bufferA)
