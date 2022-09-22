@@ -130,8 +130,8 @@ const richMenuObjectA = () => ({
   areas: [
     {
       bounds: {
-        x: 155,
-        y: 195,
+        x: 160,
+        y: 205,
         width: 123,
         height: 215
       },
@@ -143,7 +143,7 @@ const richMenuObjectA = () => ({
     {
       bounds: {
         x: 330,
-        y: 195,
+        y: 205,
         width: 123,
         height: 215
       },
@@ -156,7 +156,7 @@ const richMenuObjectA = () => ({
     {
       bounds: {
         x: 515,
-        y: 195,
+        y: 205,
         width: 123,
         height: 215
       },
