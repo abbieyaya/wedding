@@ -174,7 +174,7 @@ const main = async (client) => {
   const richMenuAId = await client.createRichMenu(richMenuObjectA())
 
   // Upload image to rich menu A
-  const filepathA = join(__dirname, './public/XUAN.png')
+  const filepathA = join(__dirname, './public/xuan.png')
   const bufferA = readFileSync(filepathA)
 
   await client.setRichMenuImage(richMenuAId, bufferA)
