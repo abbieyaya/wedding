@@ -54,7 +54,7 @@ function handleEvent(event) {
         return client.replyMessage(event.replyToken, [
             {
                 type: 'template',
-                altText: '最佳主持人票選',
+                altText: '婚紗',
   			    template: {
   					type: 'image_carousel',
   					columns: [
